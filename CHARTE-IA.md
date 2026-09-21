@@ -1,4 +1,4 @@
-# ✍️ Charte d'usage de l'IA — Équipe `[nom de l'équipe]`
+# ✍️ Charte d'usage de l'IA — Équipe `FI2_08`
 
 > **SAÉ 3.01 « Climat & Cultures »** — à **signer par tous les membres en J0**, annexée au livrable.
 
@@ -53,13 +53,13 @@ En signant, chaque membre de l'équipe s'engage à :
 
 ---
 
-## Signatures *(J0 — date : `[…]`)*
+## Signatures *(J0 — date : `21/09/2026`)*
 
-| Membre (Prénom NOM) | Parcours (DEV/DATA) | Signature         |
-|-------------------|---------------------|-------------------|
-| `Adrien Roj`      | DEV                 | A.R Le 21/09/2026 |
-| `Emmanuel Appiah` | DEV                 |                   |
-| `Enzo Mezmaz`     | DEV                 |                   |
-| `Akram Ben Abdallah` | DATA                |                   |
-| `David Zhou`      | DATA                |                   |
-| ``                | DATA                |                   |
+| Membre (Prénom NOM)  | Parcours (DEV/DATA) | Signature |
+|----------------------|---------------------|-----------|
+| `Adrien Roj`         | DEV                 | A.R       |
+| `Emmanuel Appiah`    | DEV                 | E.A       |
+| `Enzo Mezmaz`        | DEV                 | E.M       |
+| `Akram Ben Abdallah` | DATA                | A.R       |
+| `David Zhou`         | DATA                | D.Z       |
+| `Lloyd Poncet`       | DATA                | L.P       |
