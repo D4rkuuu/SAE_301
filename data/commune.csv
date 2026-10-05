@@ -1,0 +1,5 @@
+culture,id_commune,nom,code_insee,latitude,longitude,altitude_m,zone_climatique,remarque_agricole
+vigne(raisin de cuve),1,Dijon,21231,47.32,5.04,245,semi-continental,Bourgogne - vigne
+maïs grain,2,Strasbourg,67482,48.58,7.75,140,semi-continental,Plaine d'Alsace - maïs
+blé tendre hiver et pomme de terre,3,Lille,59350,50.63,3.06,25,océanique dégradé,Flandre - betterave et blé
+colza,4,Rennes,35238,48.11,-1.68,30,océanique,Bretagne - polyculture élevage
