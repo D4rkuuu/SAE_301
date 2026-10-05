@@ -39,6 +39,13 @@
 
 *(Ajoutez autant de lignes que nécessaire.)*
 
+| Date | Équipier | Outil/modèle | Tâche / contexte | Prompt (résumé) | Sortie IA | Gardé/modifié/rejeté | Justification (vérif. / correction / test) | Tokens (≈) |
+|---|---|---|---|---|---|---|---|---|
+| 25/09 | Akram | Gemini | Nettoyage et sourcing du référentiel cultures (`referentiel-cultures.csv`) | « Vérifie et normalise mon CSV de cultures avec des sources agronomiques fiables » | Table avec sources et données nettoyées | **modifié** | Rejet des données issues de Wikipédia. Remplacement par les sources officielles (ARVALIS, Terres Inovia, IFV). Conversion des intervalles textuels en scalaires stricts (INTEGER/DECIMAL) pour la BDD. | non mesurable |
+| 28/09 | Akram | Gemini | Gestion de l'absence d'$ET_0$ dans l'API Open-Meteo Climate | « Comment calculer le bilan hydrique si l'API renvoie null pour ET0 ? » | Formule d'Hargreaves-Samani | **gardé** | Vérification de la méthode FAO-56. Formule retenue car elle ne nécessite que $T_{\min}$, $T_{\max}$ et la latitude (calcul de $R_a$ par DOY), évitant le recours au vent/rayonnement absent de l'API. | non mesurable |
+| 02/10 | Akram | Gemini | Modélisation relationnelle et schéma en étoile | « Fais-moi un schéma en étoile avec les dimensions et l'API Open-Meteo » | Diagramme schéma en étoile et structure SQL | **modifié** | Exclusion de l'API Open-Meteo des tables de dimensions (l'API reste un flux externe transitoire non persisté). Suppression du couplage direct culture-commune dans `commune.csv` pour respecter la 1NF. | non mesurable |
+| 05/10 | Akram | Gemini | Cadrage du contrat d'interface et du jeu d'essai J1 | « C'est quoi les séries test et que doit contenir le livrable J1 ? » | Spécification DEV/DATA et structure du jeu d'essai `series-test.csv` | **gardé** | Format d'échange aligné sur les sorties brutes de l'API. Vérification des cas limites nécessaires au test unitaire des règles de calcul (gel printanier, plafonnement maïs à 30 °C). | non mesurable |
+
 ---
 
 ## 🌱 Synthèse environnementale (à compléter pour le rendu final)
