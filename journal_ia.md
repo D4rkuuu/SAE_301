@@ -1,7 +1,17 @@
 ## [11/09/2026] — Initialisation du format du journal (DEV)
 
-* **Outil utilisé** : Gemini
-* **Prompt / Question posée** : "À quoi doit ressembler le journal_ia.md d'après les docs ?"
-* **Résultat fourni par l'IA** : Explication des règles de traçabilité imposées par le sujet (pas d'IA en source BDD, obligation de vérifier les données/code) et proposition d'un modèle Markdown avec les champs : Outil, Prompt, Résultat, Vérification, Décision.
-* **Vérification effectuée** : Relecture des documents d'amorçage (`14-amorcage-DATA-referentiel-seuils.pdf`, section §7.2) pour valider que le modèle répond bien aux exigences du sujet.
-* **Décision & Intégration** : Modèle retenu et appliqué immédiatement pour créer le fichier `JOURNAL_IA.md` à la racine du dépôt Git.
+**Exemple de tableau remplis pour le journal :**
+
+| Date    | Équipier | Outil/modèle | Tâche / contexte   | Prompt (résumé)                                 | Sortie IA        | Gardé/modifié/rejeté | Justification (vérif. / correction / test)                                                | Tokens (≈) |
+|---------|----------|--------------|--------------------|-------------------------------------------------|------------------|----------------------|-------------------------------------------------------------------------------------------|------------|
+| 12/10   | Léa      | Haiku 4.5    | requête SQL des GDD | « somme des T° > 10 °C par culture et commune » | requête proposée | **modifié**          | jointure fausse sur `Dim_Temps` corrigée ; index ajouté ; testée sur commune X → cohérent | ~1 900     |
+| remplir | les      | infos        | ici                | ...                                             | ...              | ...                  | ...                                                                                       | ...        |
+
+*(Ajoutez autant de lignes que nécessaire.)*
+
+# **JOURNAL IA**
+
+| Date | Équipier   | Outil/modèle | Tâche / contexte | Prompt (résumé) | Sortie IA | Gardé/modifié/rejeté | Justification (vérif. / correction / test) | Tokens (≈) |
+|---|------------|---|---|---|---|---|---|---|
+| 08/10 | Adrien Roj | Gemini | Rédaction du contrat d'interface `contrat_interface.md` | « Crée-moi un exemple de contrat d'interface entre DEV et DATA » | Exemple de contrat avec structure JSON d'échange | **modifié** | Ajout des métadonnées de commune (`code_insee`, `nom_commune`) et de culture (`culture_id`) oubliées initialement par l'IA, indispensables pour que DATA croise avec la BDD. Ajout de commentaires explicatifs pour clarifier les attentes. | non mesurable |
+|  |  |  |  |  |  |  |  |  |
