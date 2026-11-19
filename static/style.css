@@ -24,7 +24,7 @@ header {
 
 .div_principal {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 300px 1fr;
     gap: 24px;
     flex: 1;
     padding: 24px;
@@ -40,6 +40,102 @@ header {
     gap: 20px;
 }
 
+.sidebar h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1c3a2b;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eef2f0;
+}
+
+#formulaire_parametres {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eef2f0;
+}
+
+#formulaire_parametres > label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #7c8a82;
+    letter-spacing: 0.05em;
+}
+
+#formulaire_parametres select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce2de;
+    border-radius: 10px;
+    background-color: #f8faf9;
+    font-size: 0.95rem;
+    color: #1f2933;
+    cursor: pointer;
+}
+
+#formulaire_parametres button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #1c3a2b;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#formulaire_parametres button[type="submit"]:hover {
+    background-color: #2e5a36;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset > legend {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #7c8a82;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.horizon_options {
+    display: flex;
+    background-color: #f4f7f5;
+    border: 1px solid #dce2de;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.horizon_options input[type="radio"] {
+    display: none;
+}
+
+.horizon_options label {
+    flex: 1;
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    color: #526059;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.horizon_options input:checked + label {
+    background-color: #ffffff;
+    color: #1c3a2b;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
 .info_cmip6 {
     background-color: #e8f5e9;
     color: #2e5a36;
@@ -47,6 +143,13 @@ header {
     border-radius: 8px;
     font-size: 0.9rem;
     line-height: 1.4;
+}
+
+.info_cmip6 h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #216e39;
+    margin-bottom: 6px;
 }
 
 .tableau_de_bord {
