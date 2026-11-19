@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #f4f6f5;
+    color: #1f2933;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid lightgrey;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div_principal {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    flex: 1;
+    padding: 24px;
+}
+
+.sidebar {
+    background-color: #ffffff;
+    border: 1px solid lightgrey;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info_cmip6 {
+    background-color: #e8f5e9;
+    color: #2e5a36;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.tableau_de_bord {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section_verdict {
+    background-color: #fef3c7;
+    border: 1px solid orange; /* A faire changer en fonction du verdict */
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 80px;
+}
+
+.kpi_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.kpi_carte,
+.section_courbe,
+.section_carte {
+    background-color: #ffffff;
+    border: 1px solid lightgrey;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.kpi_carte {
+    min-height: 120px;
+}
+
+.section_courbe,
+.section_carte {
+    min-height: 260px;
+}
+
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid lightgrey;
+    padding: 12px 24px;
+    font-size: 0.85rem;
+    color: #64748b;
+    display: flex;
+    justify-content: space-between;
+}

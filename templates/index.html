@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climat & Cultures en 2050</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
-    <h1>Hello World ! Bienvenue en 2050</h1>
-    <p>Test du squelette de l'application du pôle DEV.</p>
+
+    <header>
+        <h1>Hello World ! Bienvenue en 2050</h1>
+    </header>
+
+    <div class="div_principal">
+
+        <aside class="sidebar">
+            <h2>Paramètres d'analyse</h2>
+            <form id="formulaire_parametres">
+
+            </form>
+
+            <div class="info_cmip6">
+                <p>Les simulations climatiques s'appuient sur le scénario d'émissions médian SSP2-4.5 du GIEC.</p>
+            </div>
+        </aside>
+
+        <main class="tableau_de_bord">
+            <section class="section_verdict">
+                <p>Ici sera placé le verdict prononcé après avoir entré et validé les paramètres</p>
+            </section>
+
+            <section class="kpi_grid">
+                <article class="kpi_carte" id="kpi_gel"></article>
+                <article class="kpi_carte" id="kpi_gdd"></article>
+                <article class="kpi_carte" id="kpi_stress"></article>
+                <article class="kpi_carte" id="kpi_eau"></article>
+            </section>
+
+           <section class="section_courbe">
+                <p>Ici sera placé la courbe</p>
+           </section>
+            <section class="section_carte">
+                <p>Ici sera placé si possible la carte</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Test du squelette de l'application du pôle DEV.</p>
+    </footer>
+
 </body>
+
 </html>
