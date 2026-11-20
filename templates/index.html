@@ -4,9 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climat & Cultures en 2050</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
-    <h1>Hello World ! Bienvenue en 2050</h1>
-    <p>Test du squelette de l'application du pôle DEV.</p>
+
+    <header>
+        <h1>Hello World ! Bienvenue en 2050</h1>
+    </header>
+
+    <div class="div_principal">
+
+        <aside class="sidebar">
+            <h2>Paramètres d'analyse</h2>
+            <form id="formulaire_parametres" action="/" method="post">
+                <label for="champ_commune"> COMMUNE
+                    <select id="champ_commune" name="code_insee" >
+                        <option value="21231">Dijon</option>
+                        <option value="67482">Strasbourg</option>
+                        <option value="59350">Lille</option>
+                        <option value="35238">Rennes</option>
+                    </select>
+                </label>
+
+                <label for="champ_culture"> CULTURE CIBLÉE
+                    <select id="champ_culture" name="id_culture" >
+                        <option value="1">Blé tendre (hiver)</option>
+                        <option value="2">Colza (hiver)</option>
+                        <option value="3">Maïs grain</option>
+                        <option value="4">Pomme de terre</option>
+                        <option value="5">Vigne (raisin de cuve)</option>
+                    </select>
+                </label>
+
+                <fieldset>
+                    <legend>HORIZON TEMPOREL</legend>
+                    <div class="horizon_options">
+                        <input name="id_horizon" id="horizon_1" type="radio" value="1">
+                        <label for="horizon_1">Aujourd'hui</label>
+
+                        <input name="id_horizon" id="horizon_2" type="radio" value="2">
+                        <label for="horizon_2">2030</label>
+
+                        <input name="id_horizon" id="horizon_3" type="radio" value="3" checked>
+                        <label for="horizon_3">2050</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Lancer l'analyse</button>
+            </form>
+
+            <div class="info_cmip6">
+                <h3>Données de base : CMIP6</h3>
+                <p>Les simulations climatiques s'appuient sur le scénario d'émissions médian SSP2-4.5 du GIEC.</p>
+            </div>
+        </aside>
+
+        <main class="tableau_de_bord">
+            <section class="section_verdict">
+                <p>Ici sera placé le verdict prononcé après avoir entré et validé les paramètres</p>
+            </section>
+
+            <section class="kpi_grid">
+                <article class="kpi_carte" id="kpi_gel"></article>
+                <article class="kpi_carte" id="kpi_gdd"></article>
+                <article class="kpi_carte" id="kpi_stress"></article>
+                <article class="kpi_carte" id="kpi_eau"></article>
+            </section>
+
+           <section class="section_courbe">
+                <p>Ici sera placé la courbe</p>
+           </section>
+            <section class="section_carte">
+                <p>Ici sera placé si possible la carte</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Test du squelette de l'application du pôle DEV.</p>
+    </footer>
+
 </body>
+
 </html>
