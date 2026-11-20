@@ -1,6 +1,5 @@
 import requests
 
-
 def fetch_weather_data(
     lat: float, lon: float, start_date: str, end_date: str
 ) -> dict:
