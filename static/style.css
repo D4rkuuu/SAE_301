@@ -15,11 +15,17 @@ body {
 
 header {
     background-color: #ffffff;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid #dce2de;
     padding: 16px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1c3a2b;
 }
 
 .div_principal {
@@ -32,12 +38,13 @@ header {
 
 .sidebar {
     background-color: #ffffff;
-    border: 1px solid lightgrey;
+    border: 1px solid #dce2de;
     border-radius: 12px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-self: start;
 }
 
 .sidebar h2 {
@@ -108,6 +115,8 @@ fieldset > legend {
 
 .horizon_options {
     display: flex;
+    flex-direction: column;
+    gap: 4px;
     background-color: #f4f7f5;
     border: 1px solid #dce2de;
     border-radius: 10px;
@@ -119,11 +128,10 @@ fieldset > legend {
 }
 
 .horizon_options label {
-    flex: 1;
-    text-align: center;
-    padding: 8px 4px;
+    text-align: left;
+    padding: 9px 12px;
     border-radius: 7px;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: #526059;
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
@@ -141,8 +149,8 @@ fieldset > legend {
     color: #2e5a36;
     padding: 14px;
     border-radius: 8px;
-    font-size: 0.9rem;
-    line-height: 1.4;
+    font-size: 0.88rem;
+    line-height: 1.45;
 }
 
 .info_cmip6 h3 {
@@ -159,11 +167,37 @@ fieldset > legend {
 }
 
 .section_verdict {
-    background-color: #fef3c7;
-    border: 1px solid orange; /* A faire changer en fonction du verdict */
+    background-color: #ffffff;
+    border: 1px solid #dce2de;
+    border-left: 5px solid #7c8a82;
     border-radius: 12px;
     padding: 20px;
-    min-height: 80px;
+    min-height: 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+.section_verdict.verdict_viable {
+    background-color: #ecfdf5;
+    border-color: #6ee7b7;
+    border-left-color: #059669;
+    color: #065f46;
+}
+
+.section_verdict.verdict_a_risque {
+    background-color: #fef3c7;
+    border-color: #fcd34d;
+    border-left-color: #d97706;
+    color: #92400e;
+}
+
+.section_verdict.verdict_non_viable {
+    background-color: #fef2f2;
+    border-color: #fca5a5;
+    border-left-color: #dc2626;
+    color: #991b1b;
 }
 
 .kpi_grid {
@@ -173,29 +207,80 @@ fieldset > legend {
 }
 
 .kpi_carte,
-.section_courbe,
-.section_carte {
+.section_courbe {
     background-color: #ffffff;
-    border: 1px solid lightgrey;
+    border: 1px solid #dce2de;
     border-radius: 12px;
     padding: 20px;
 }
 
 .kpi_carte {
-    min-height: 120px;
+    min-height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
 }
 
-.section_courbe,
-.section_carte {
-    min-height: 260px;
+.kpi_carte h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #64748b;
+}
+
+.kpi_valeur {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #1c3a2b;
+}
+
+.kpi_incertitude {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.section_courbe {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section_courbe p {
+    color: #64748b;
+    text-align: center;
 }
 
 footer {
     background-color: #ffffff;
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid #dce2de;
     padding: 12px 24px;
     font-size: 0.85rem;
     color: #64748b;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+footer a {
+    color: #1c3a2b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .div_principal {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi_grid {
+        grid-template-columns: 1fr;
+    }
 }
