@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climat & Cultures en 2050</title>
+    <title>Climat &; Cultures — Projections 2020–2049</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Hello World ! Bienvenue en 2050</h1>
+        <h1>Climat &; Cultures — Projections agro-climatiques (2020–2049)</h1>
     </header>
 
     <div class="div_principal">
@@ -18,7 +18,7 @@
         <aside class="sidebar">
             <h2>Paramètres d'analyse</h2>
             <form id="formulaire_parametres" action="/" method="post">
-                <label for="champ_commune"> COMMUNE
+                <label for="champ_commune">COMMUNE
                     <select id="champ_commune" name="code_insee" >
                         <option value="21231">Dijon</option>
                         <option value="67482">Strasbourg</option>
@@ -27,7 +27,8 @@
                     </select>
                 </label>
 
-                <label for="champ_culture"> CULTURE CIBLÉE
+                <label for="champ_culture">CULTURE CIBLÉE
+                    <!-- A changer plus tard pour que ça autocomplète en récupérant les villes dans la bdd -->
                     <select id="champ_culture" name="id_culture" >
                         <option value="1">Blé tendre (hiver)</option>
                         <option value="2">Colza (hiver)</option>
@@ -41,13 +42,13 @@
                     <legend>HORIZON TEMPOREL</legend>
                     <div class="horizon_options">
                         <input name="id_horizon" id="horizon_1" type="radio" value="1">
-                        <label for="horizon_1">Aujourd'hui</label>
+                        <label for="horizon_1">2020 - 2029 (Actuel)</label>
 
                         <input name="id_horizon" id="horizon_2" type="radio" value="2">
-                        <label for="horizon_2">2030</label>
+                        <label for="horizon_2">2030 - 2039 (Horizon 2030)</label>
 
                         <input name="id_horizon" id="horizon_3" type="radio" value="3" checked>
-                        <label for="horizon_3">2050</label>
+                        <label for="horizon_3">2040 - 2049 (Horizon 2040)</label>
                     </div>
                 </fieldset>
 
@@ -55,40 +56,48 @@
             </form>
 
             <div class="info_cmip6">
-                <h3>Données de base : CMIP6 (HighResMIP)</h3>
-                <p>Projections journalières à 10 km (modèles MRI-AGCM3-2-S et EC_Earth3P_HR), proches du scénario à fortes émissions RCP8.5 / SSP5-8.5.</p>
+                <h3>Données sources : Open-Meteo / CMIP6 (HighResMIP)</h3>
+                <p>Projections journalières sur maille ~10 km (modèles MRI_AGCM3_2_S et EC_Earth3P_HR), selon le scénario unique à fortes émissions fourni par l'API (proche RCP8.5 / SSP5-8.5).</p>
             </div>
         </aside>
 
         <main class="tableau_de_bord">
             <section class="section_verdict">
-                <p>Ici sera placé le verdict prononcé après avoir entré et validé les paramètres</p>
+                <p>Sélectionnez une commune, une culture et un horizon puis lancez l'analyse pour afficher le verdict de viabilité.</p>
             </section>
 
             <section class="kpi_grid">
-                <article class="kpi_carte" id="kpi_gel"></article>
-                <article class="kpi_carte" id="kpi_gdd"></article>
-                <article class="kpi_carte" id="kpi_stress"></article>
-                <article class="kpi_carte" id="kpi_eau"></article>
+                <article class="kpi_carte" id="kpi_gel">
+                    <h3>Risque de gel</h3>
+                    <p class="kpi_valeur">—</p>
+                </article>
+                <article class="kpi_carte" id="kpi_gdd">
+                    <h3>Maturité (GDD)</h3>
+                    <p class="kpi_valeur">—</p>
+                </article>
+                <article class="kpi_carte" id="kpi_stress">
+                    <h3>Stress thermique</h3>
+                    <p class="kpi_valeur">—</p>
+                </article>
+                <article class="kpi_carte" id="kpi_eau">
+                    <h3>Bilan hydrique</h3>
+                    <p class="kpi_valeur">—</p>
+                </article>
             </section>
 
-           <section class="section_courbe">
-                <p>Ici sera placé la courbe</p>
-           </section>
-            <section class="section_carte">
-                <p>Ici sera placé si possible la carte</p>
+            <section class="section_courbe">
+                <p>Le profil mensuel de température et de bilan hydrique s'affichera ici après l'analyse.</p>
             </section>
         </main>
     </div>
 
     <footer>
-    <p>
-        Données climatiques : <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a>
-        &amp; programme <a href="https://pcmdi.llnl.gov/CMIP6/TermsOfUse" target="_blank" rel="noopener">CMIP6</a> (CC BY 4.0)
-    </p>
-    <p>Climat &amp; Cultures — Mentions légales et confidentialité</p>
-</footer>
+        <p>
+            Données climatiques : <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a>
+            &amp; programme <a href="https://pcmdi.llnl.gov/CMIP6/TermsOfUse" target="_blank" rel="noopener">CMIP6</a> (CC BY 4.0)
+        </p>
+        <p>Climat &amp; Cultures — <a href="/mentions-legales">Mentions légales et confidentialité</a></p>
+    </footer>
 
 </body>
-
 </html>
