@@ -1,6 +1,6 @@
 # Contrat d'Interface DEV <-> DATA
 
-**Version :** v1.8 | **Date :** 22/11/2026
+**Version :** v1.9 | **Date :** 25/11/2026
 
 Ce document définit le format et les règles d'échange de données entre le module **DEV** (récupération météo via API Open-Meteo et affichage web) et le module **DATA** (référentiels, calculs agronomiques et stockage en base de données).
 
@@ -64,7 +64,7 @@ Chaque horizon couvre une **décennie complète de 10 ans** (sans chevauchement)
       "t_max": 28.4,                // Temperature maximale du jour (degC) -> STRESS THERMIQUE et MATURITE (GDD, plafonnee a 30 degC pour le mais)
       "t_moy": 22.3,                // Temperature moyenne du jour (degC) -> Controle Hargreaves (ET0) et courbe mensuelle IHM
       "precip": 0.0,                // Cumul des precipitations (mm) -> BILAN HYDRIQUE
-      "et0": 4.8                    // Evapotranspiration FAO (mm, champ API et0_fao_evapotranspiration_sum) -> BILAN HYDRIQUE
+      "et0": 4.8                    // Evapotranspiration FAO (mm, champ API et0_fao_evapotranspiration_sum) -> Trace et controle (bilan hydrique calcule via Hargreaves en Sprint 1)
     }
     // ... (3 805 a 3 806 jours : du 01/08 de annee_debut - 1 au 31/12 de annee_fin)
   ]
@@ -98,7 +98,7 @@ DEV interroge ensuite `Fact_Indicateur` (ou une vue/fonction mise à disposition
       "gdd_cumul_moyen": 2230.0,      // DECIMAL(7,1) : somme thermique annuelle moyenne sur 10 ans via (t_min + t_max)/2 - t_base (t_max plafonnee a 30 degC pour le mais)
       "nb_jours_gel": 0.4,            // DECIMAL(4,1) : nombre moyen de jours de gel critique/an (fenetre sensible)
       "nb_jours_stress_th": 3.2,      // DECIMAL(4,1) : nombre moyen de jours de stress thermique/an (fenetre sensible)
-      "bilan_hydrique_mm": -120.0     // DECIMAL(6,1) : bilan net moyen Precipitations - et0_fao_evapotranspiration_sum API (mm)
+      "bilan_hydrique_mm": -120.0     // DECIMAL(6,1) : bilan net moyen Precipitations - ET0 Hargreaves (mm, car et0 API surestimait)
     },
     "verdict": "A_RISQUE"             // VARCHAR(20) : VIABLE | A_RISQUE | NON_VIABLE
   },

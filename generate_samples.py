@@ -7,17 +7,17 @@ def main():
     print("Récupération des données climatiques d'exemple depuis Open-Meteo...")
 
     raw_data = fetch_weather_data(
-        lat=43.60,
-        lon=1.44,
+        lat=47.32,
+        lon=5.04,
         start_date="2039-08-01",
         end_date="2049-12-31",
     )
 
     formatted_data = format_to_dev_contract(
         raw_data=raw_data,
-        code_insee="31555",
-        nom_commune="Toulouse",
-        id_culture=1,
+        code_insee="21231",
+        nom_commune="Dijon",
+        id_culture=5,
         id_horizon=3,
         horizon="2040-2049",
     )
