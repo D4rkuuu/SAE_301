@@ -4,6 +4,8 @@ import requests
 
 def fetch_weather_data(lat: float, lon: float, start_date: str, end_date: str) -> dict:
     """Récupère les données climatiques pour les deux modèles du contrat v1.8 en un seul appel."""
+    if lat is None or lon is None or not (-90 <= lat <= 90 and -180 <= lon <= 180):
+        raise ValueError(f"Coordonnées GPS invalides : lat={lat}, lon={lon}")
     url = "https://climate-api.open-meteo.com/v1/climate"
 
     params = {
@@ -22,9 +24,13 @@ def fetch_weather_data(lat: float, lon: float, start_date: str, end_date: str) -
         "timezone": "Europe/Paris",
     }
 
-    response = requests.get(url, params=params, timeout=10)
-    response.raise_for_status()
-    return response.json()
+    try:
+        response = requests.get(url, params=params, timeout=10)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Erreur d'appel API : {e}")
+        return {}
 
 
 def format_to_dev_contract(
@@ -61,8 +67,8 @@ def format_to_dev_contract(
                     "t_min": tmin,
                     "t_max": tmax,
                     "t_moy": tmoy,
-                    "precip": precip if precip is not None else 0.0,
-                    "et0": et0 if et0 is not None else 0.0,
+                    "precip": precip,
+                    "et0": et0,
                 }
             )
 
